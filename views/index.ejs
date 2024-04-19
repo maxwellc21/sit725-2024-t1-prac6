@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest API</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue">
+            <!-- User Icon -->
+            <ul id="nav-mobile" class="left">
+              <li><a href="#"><img src="https://icons.iconarchive.com/icons/iconarchive/incognito-animal-2/256/Cat-icon.png" alt="" class="user-image-size"></a></li>
+            </ul>
+            <!-- Logo -->
+            <a href="#" class="brand-logo right hide-on-med-and-down"><img src="images/logo.png" alt="" class="logo-size"></a>
+          </div>
+        </nav>
+      </div>
+    <div class="container center-align">
+        <img src="https://icons.iconarchive.com/icons/iconarchive/incognito-animal-2/256/Cat-icon.png" alt="catman" class="cat-size"><br>
+        
+        <!-- Modal Trigger Button -->
+        <a class="waves-effect waves-light btn modal-trigger btn-large" href="#modal1">CLICK MEEE!</a>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Creat a Cat</h4>
+                <form action="/" method="post">
+                    <div class="input-field">
+                        <input type="text" id="title" name="title" placeholder="Title">
+                        <label for="title">What are you calling the cat?</label>
+                        
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="content" name="content" placeholder="Content">
+                        <label for="content">Tell us about the cat</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="image" name="image" placeholder="Image URL">
+                        <label for="image">Provide link to a picture</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">You're almost done!</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Pract 4: This is developed as a requirement for SIT 725 @ Deakin 20204 T1 </p>
+            </div>
+        </div>
+
+        <hr>
+        <h2>Which <span>Cat</span> are You?</h2>
+        <div class="row">
+            <% cardLists.forEach(card => { %>
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= card.imageURL %>" alt="Card Image">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"><%= card.title %></span>
+                            <p><%= card.content %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        // Initialize modal
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, {});
+        });
+    </script>
+</body>
+</html>

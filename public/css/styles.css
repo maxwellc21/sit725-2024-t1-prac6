@@ -1,0 +1,28 @@
+.user-image-size{
+    height: 55px;
+}
+.logo-size{
+    height: 55px;
+}
+.container-mod{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    
+}
+.custom-size{
+    height: 400px;
+}
+#modal-trigger{
+    margin-top: 10px;
+}
+span{
+    color: brown;
+}
+
+
+
+.modal-trigger{
+    margin-top: 10px;
+}
