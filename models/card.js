@@ -7,3 +7,4 @@ const CardSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Card", CardSchema);
+//export default mongoose.model("Card", CardSchema);
